@@ -30,7 +30,7 @@ function writeTable() {
           json=JSON.parse(data);
         alert(json.userId);
         console.log(data);
-
+        out += '<table border="1">';
         for(var row=0; row<jsonData.length; row++) {
 
               out += '<tr>'
@@ -43,8 +43,9 @@ function writeTable() {
                       + '<td>' + jsonData[row].isDefaultAccount + '</td>'
                       + '</tr>';
                }
-            
-    document.write(out);
+        out += '</table>';            
+   
+    $('#jobs').append(out);
 
 
     };
@@ -53,7 +54,6 @@ function writeTable() {
       type: 'GET',
       url: 'http://54.236.236.157:8080/RetailExecution-0.0.1-SNAPSHOT/rest/forecast/getId/hp', 
       dataType: 'text',
-      async:false,
       success: successFunction,
       error: function(data){
            alert("error");
@@ -113,6 +113,9 @@ function writeTable() {
               <p><strong>karunakar.rdyn@gmail.commzbxZBjhJcjxjZjx</strong></p>
               <p><i>040-7774353</i></p>
 
+
+<div id="jobs"></div>
+
 <div class="jumbotron">
 <div class="container">
 <table border="1">
@@ -129,6 +132,8 @@ function writeTable() {
 </table>
 </div>
 </div>
+
+
 
 
 

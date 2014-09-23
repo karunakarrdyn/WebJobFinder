@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+	<head>
+		<style type="text/css">
+            html, body {
+                       height: 100%;
+                       }
+
+                      footer {
+                               position: absolute;
+                               bottom: 0;
+                              }
+		</style>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>About</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+     <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    
+     var jsonData = [{"merchant":"eletspay","accountName":"hello","accountType":"Savings","ifscCode":"5545","email":"mypal.1989@gmail.com","phoneNum":"98654567876","isDefaultAccount":false},{"merchant":"eletspay","accountName":"helloi32irn","accountType":"Savings","ifscCode":"5545","email":"mypal.appa99721989@gmail.com","phoneNum":"98654567876","isDefaultAccount":false}];
+
+function writeTable() {
+    var out = '';
+    var  xmlhttp=new XMLHttpRequest();
+    var id;
+    var json;
+    var successFunction = function(data){
+          json=JSON.parse(data);
+        alert(json.userId);
+        console.log(data);
+
+        for(var row=0; row<jsonData.length; row++) {
+
+              out += '<tr>'
+                      + '<td>' + jsonData[row].merchant + '</td>'
+                      + '<td>' + jsonData[row].accountName + '</td>'
+                      + '<td>' + jsonData[row].accountType + '</td>'
+                      + '<td>' + jsonData[row].ifscCode + '</td>'
+                      + '<td>' + jsonData[row].email + '</td>'
+                      + '<td>' + jsonData[row].phoneNum + '</td>'
+                      + '<td>' + jsonData[row].isDefaultAccount + '</td>'
+                      + '</tr>';
+               }
+            
+    document.write(out);
+
+
+    };
+    
+    $.ajax({
+      type: 'GET',
+      url: 'http://54.236.236.157:8080/RetailExecution-0.0.1-SNAPSHOT/rest/forecast/getId/hp', 
+      dataType: 'text',
+      async:false,
+      success: successFunction,
+      error: function(data){
+           alert("error");
+      },
+      complete:function(data){
+        alert("complete");
+      }
+    });
+   
+     
+
+   
+   
+}
+    </script>
+	</head>
+	<body>
+
+		 <nav class="navbar navbar-inverse" role="navigation">
+          <div class="container-fluid">
+
+
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+            <a class="navbar-brand" href="#"><img src="karunakar.JPG" class="img-rounded" height="38" width="42"/></a>
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">link1</a></li>
+                      <li><a href="#">link2</a></li>
+                      <li><a href="#">link3</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">One more separated link</a></li>
+                    </ul>
+                  </li>
+
+              </ul>
+            </div>
+          </div>
+     </nav>
+         
+         <p><b>Karun,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,kfhsdifiusfi</b></p>
+              <p><strong>karunakar.rdyn@gmail.commzbxZBjhJcjxjZjx</strong></p>
+              <p><i>040-7774353</i></p>
+
+<div class="jumbotron">
+<div class="container">
+<table border="1">
+    <tr>
+        <th>Merchant</th>
+        <th>AccountName</th>
+        <th>AccountType</th>
+        <th>IfscCode</th>
+        <th>Email</th>
+        <th>PhoneNum</th>
+        <th>IsDefaultAccount</th>
+    </tr>
+    <script>writeTable();</script>
+</table>
+</div>
+</div>
+
+
+
+         <div class="navbar navbar-inverse navbar-fixed-bottom">
+           <div class="container">
+              <p class="navbar-text"><b>Karunakar Reddy</b></p>
+              <p class="navbar-text"><strong>Email_id:karunakar.rdyn@gmail.com</strong></p>
+              <p class="navbar-text"><i>Ph.No:040-7774353</i></p>
+          </div>
+         </div>
+         
+
+
+
+   
+	</body>
+</html>
